@@ -16,7 +16,9 @@
 
 
     {{-- Link to styles --}}
-<link rel="stylesheet" href="@yield('style', asset('css/app.css'))">
+    <link rel="stylesheet" href="@yield('style', asset('css/app.css'))">
+    <link rel="stylesheet" href="{{ asset('styles/global/fonts.css') }}"> 
+    <link rel="stylesheet" href="{{ asset('styles/global/reset.css') }}"> 
     @stack('styles')
 
     {{-- Additional meta tags and resources --}}
