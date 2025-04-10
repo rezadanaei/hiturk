@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="@yield('style', asset('css/app.css'))">
     <link rel="stylesheet" href="{{ asset('styles/global/fonts.css') }}"> 
     <link rel="stylesheet" href="{{ asset('styles/global/reset.css') }}"> 
+
     @stack('styles')
 
     {{-- Additional meta tags and resources --}}
@@ -36,14 +37,14 @@
     <div class="container">
         @yield('content')
     </div>
-
+    {{-- Scripts --}}
+        <script src="{{ asset('js/app.js') }}"></script>
+    @stack('scripts')
     {{-- Footer --}}
     @hasSection('footer')
         @yield('footer')
     @endif
   
-    {{-- Scripts --}}
-    <script src="{{ asset('js/app.js') }}"></script>
-    @stack('scripts')
+    
 </body>
 </html>

@@ -80,3 +80,10 @@
     url('../../fonts/vazir/eot/Vazir-Bold-FD-WOL.eot') format('eot')
     url('../../fonts/vazir/ttf/Vazir-Bold-FD-WOL.ttf') format('ttf');
 }
+
+/* Snapp */
+
+@font-face {
+    font-family: 'Snapp';
+    src: url('../../fonts/snapp/Snapp.ttf') format('ttf');
+}

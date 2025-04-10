@@ -3,15 +3,16 @@
     header {
         position: fixed;
         top: 0;
-        left: 0;
+        /* left: 0; */
         width: 100%;
+        max-width: 1500px;
         background: white;
         transition: transform 0.3s ease-in-out;
         z-index: 998;
     }
 
     header.hide {
-        transform: translateY(-65%);
+        transform: translateY(-50%);
     }
     .navigation-general{
         padding: 20px 40px;
@@ -58,8 +59,9 @@
         text-decoration: none;
         position: absolute;
         top: 50%;
-        left: 0px;
-        transform: translateY(-50%)
+        left: 20px;
+        transform: translateY(-50%);
+        width: 120px;
     }
     .logo-link > img{
          height: 100%;
@@ -70,7 +72,7 @@
 
     }
     .navigation-catrgories{
-        padding: 10px 40px;
+        padding: 10px 40px 30px 40px;
     }
     .main-list{
         display: flex;
@@ -161,6 +163,7 @@
         .logo-link{
             height: auto;
             left: 20px;
+            width: unset;
         }
         .logo-link > img{
             height: 50px;
@@ -180,7 +183,6 @@
     <div class="navigation-general">
         <div class="desktop-only">
             @include('layouts.shopping-cart')
-            @include('layouts.auth-modal')
             @include('layouts.auth-button')
             
         </div>
