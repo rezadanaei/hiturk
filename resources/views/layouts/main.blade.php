@@ -15,6 +15,7 @@
     <meta name="robots" content="{{ $robots_index ?? $settings->robots_index ?? 'index, follow' }}">
 
 
+
     {{-- Link to styles --}}
     <link rel="stylesheet" href="@yield('style', asset('css/app.css'))">
     <link rel="stylesheet" href="{{ asset('styles/global/fonts.css') }}"> 
@@ -26,9 +27,12 @@
     @if(isset($additional_meta))
         {!! $additional_meta !!}
     @endif
-
+    <style>
+    
+    </style>
 </head>
 <body>
+    @include('layouts.loader')
     {{-- Header content --}}
     @hasSection('header')
         @yield('header')
@@ -39,10 +43,16 @@
     </div>
     {{-- Scripts --}}
         <script src="{{ asset('js/app.js') }}"></script>
+        
+        
     @stack('scripts')
     {{-- Footer --}}
     @hasSection('footer')
         @yield('footer')
+        @if (!request()->is('login') && !request()->is('profile*'))
+            @include('layouts.auth-modal')
+        @endif
+        @include("layouts.footer-mobile")
     @endif
   
     

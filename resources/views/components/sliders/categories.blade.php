@@ -29,7 +29,7 @@
 		margin: auto;
 		overflow: hidden;
 		position: relative;
-		min-height: 100%;
+		min-height: unset !important;
     }
     
     .swiper-categories .swiper-slide a{
@@ -82,13 +82,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: 'IRANSansX';
+        font-family: 'IRANSansBold';
         font-style: normal;
         font-weight: 700;
         font-size: 14px;
         line-height: 21px;
         color: #000000;
-
 
     }
     .swiper-categories .swiper-slide a img {
@@ -138,7 +137,7 @@
         height: 10px;
       }
       .swiper-categories .swiper-slide a div{
-          font-family: 'IRANSansX';
+          
           font-style: normal;
           font-weight: 400;
           font-size: 10px;
@@ -148,16 +147,3 @@
     }
 </style>
   
-  <script>
-    var categorySwiper = new Swiper(".swiper-categories", {
-		slidesPerView: 6, 
-		spaceBetween: 15,
-
-		breakpoints: {
-            
-            0: { slidesPerView: 3.3, spaceBetween: 8 }, 
-            640: { slidesPerView: 5, spaceBetween: 8 }, 
-            1024: { slidesPerView: 6, spaceBetween: 15 }, 
-        },
-	});
-  </script>

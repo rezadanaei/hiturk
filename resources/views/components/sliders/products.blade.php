@@ -1,33 +1,36 @@
-<!-- Slider main container -->
-<div class="swiper-discounts">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide">
-          <a href="#">
-              <div>5%</div>
-              <div class="swiper-discounts-img">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="" alt=""></div>
-                </div>
-              </div>
-              <samp class="swiper-discounts-title">كفش مجلسي زنانه رنگ مشکی...</samp>
-              <del class="old-price">250,000 تومان</del>
-              <samp class="new-price">4.458.700 تومان</samp>
-          </a>
-      </div>
-      
+<div class="swiper-discounts swiper-products">
+    <div class="swiper-wrapper ">
+        @foreach (range(1, 10) as $number)
+            <div class="swiper-slide">
+                <div class="nested">@include('components.sliders.nested-swiper')</div> 
+                <a class="offer" href="#">5%</a>
+                <a class="slide-link" href="#">
+                    <samp class="swiper-discounts-title">كفش مجلسي زنانه رنگ مشکی...</samp>
+                    <del class="old-price">250,000 تومان</del>
+                    <samp class="new-price">4.458.700 تومان</samp>
+                </a>
+            </div>
+        @endforeach
+        
+            
     </div>
-    
-  </div>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev">
+        <img src="{{ asset('icons/ui/next-icon.svg') }}" alt="" />
+    </div>
+    <div class="swiper-button-next">
+        <img
+            style="scale: -1"
+            src="{{ asset('icons/ui/next-icon.svg') }}"
+            alt=""
+        />
+    </div>
 
-
+</div>
 <style>
-    .swiper-discounts{
-      width: 100%;
-    }
-    .swiper-discounts{
+    .swiper-products{
         width: 100% !important; 
+        overflow: hidden !important;
     }
     .swiper-discounts .swiper-wrapper{
         height: auto !important;
@@ -140,41 +143,32 @@
 
         color: #E3B000;
     }
-
+    @media (max-width: 1024px){
+        .swiper-discount *{
+        margin: 0;
+        
+        }
+        .swiper-discounts .swiper-wrapper .swiper-slide .slide-link .new-price{
+            font-size: 16px;
+            margin: 0;
+        }
+        .swiper-discounts .swiper-wrapper .swiper-slide .slide-link .old-price{
+            margin: 0;
+        }
+        .swiper-discounts .swiper-wrapper .swiper-slide .slide-link .swiper-discounts-title{
+            font-weight: 500;
+            font-size: 14px;
+            margin: 0;
+        }
+        .swiper-discounts .swiper-slide:first-child {
+            margin-right: 10px;
+        }
+        .swiper-discounts .swiper-wrapper .swiper-slide{
+            padding: 10px;
+        }
+        .swiper-products .swiper-button-prev,
+        .swiper-products .swiper-button-next{
+            display: none !important;
+        }
+    }
 </style>
-
-{{-- <script>
-    var categorySwiper = new Swiper(".swiper-discounts", {
-		slidesPerView: 6, 
-		spaceBetween: 15,
-
-		breakpoints: {
-            
-            0: { slidesPerView: 3.3, spaceBetween: 8 }, 
-            640: { slidesPerView: 5, spaceBetween: 8 }, 
-            1024: { slidesPerView: 6, spaceBetween: 15 }, 
-        },
-	});
-  </script> --}}
-
-
-<!-- Slider main container -->
-<div class="swiper">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
-    ...
-  </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
-
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-
-  <!-- If we need scrollbar -->
-  <div class="swiper-scrollbar"></div>
-</div>

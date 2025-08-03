@@ -85,5 +85,8 @@
 
 @font-face {
     font-family: 'Snapp';
-    src: url('../../fonts/snapp/Snapp.ttf') format('ttf');
+    src: url('../../fonts/snapp/Snapp.woff2') format('woff2'),
+    url('../../fonts/snapp/Snapp.woff') format('woff'),
+    url('../../fonts/snapp/Snapp.eot') format('eot'),
+    url('../../fonts/snapp/Snapp.ttf') format('ttf'),
 }

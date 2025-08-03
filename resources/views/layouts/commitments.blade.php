@@ -203,11 +203,21 @@
         color : #606060;
     }
     .contact-us-mobile{
+        
         display: none;
 
     }
     .contact-us-mobile .title{
-        padding-bottom: 20px;
+        padding-bottom: 15px;
+        font-family: 'IRANSans';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 173.02%;
+        text-align: right;
+
+        color: #606060;
+
     }
     .aggregated-data{
         display: flex;
@@ -447,7 +457,7 @@
         .commitments{
             width: 100vw;
             border-radius:0;
-            padding: 80px 20px 50px 20px;
+            padding: 80px 15px 50px 15px;
         }
         .commitments > img{
             display: none;
@@ -463,10 +473,10 @@
             color: #E3B000;
         }
         .commitments .commitments-items .commitments-item span{
-            
+            font-family: "IranSansMedium";
             font-style: normal;
             font-weight: 500;
-            font-size: clamp(0.5rem, 2vw, 0.8rem);
+            font-size: clamp(0.6rem, 2vw, 0.8rem);
             line-height: 24px;
             text-align: center;
             color: #606060;
@@ -486,6 +496,7 @@
             margin-bottom: 30px;
 
         }
+        
         .aggregated-data{
             display: none;
         }
@@ -494,6 +505,7 @@
         }
         .license *{
             width: 25vw;
+            max-width: 130px;
         }
         .copyright{
             margin-bottom: 50px;

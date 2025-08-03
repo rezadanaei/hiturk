@@ -3,13 +3,13 @@
 <div class="swiper mySwiper slider-container">
 	<div class="swiper-wrapper">
 		<div class="swiper-slide slide">
-			<img src="{{ asset('image/1873-685-اسلایدر-سایت-های-تورک-c.jpg') }}" alt="Slide 1">
+			<img src="{{ asset('image/1873-685-اسلایدر-سایت-های-تورک-c.jpg') }}" alt="Slide 1" loading="lazy">
 		</div>
 		<div class="swiper-slide slide">
-			<img src="{{ asset('image/1873-685.jpg') }}" alt="Slide 2">
+			<img src="{{ asset('image/1873-685.jpg') }}" alt="Slide 2" loading="lazy">
 		</div>
 		<div class="swiper-slide slide">
-			<img src="{{ asset('image/Nud2ge.jpg') }}" alt="Slide 3">
+			<img src="{{ asset('image/Nud2ge.jpg') }}" alt="Slide 3" loading="lazy">
 		</div>
 	</div>
 
@@ -26,16 +26,18 @@
 </div>
 
 <style>
-	
-	.slider-container {
+	.mySwiper{
+		min-height: unset !important;
+		border-radius: 24px;
+	}
+	.mySwiper .slider-container {
 		width: 100%;
 		margin: auto;
 		overflow: hidden;
 		position: relative;
 		border-radius: 20px;
 		min-height: 100%;
-		/* max-height:100% !important; */
-		/* aspect-ratio: 16 / 9; */
+		
 	}
 	
 	.mySwiper .swiper-slide img {
@@ -47,7 +49,7 @@
 	.mySwiper .swiper-wrapper{
 		height: auto !important;
 	}
-    .nav-buttons {
+    .mySwiper .nav-buttons {
 		position: absolute;
 		bottom: 20px;
 		width: 68px;
@@ -56,7 +58,7 @@
 		right: 20px;
 		z-index: 2;
 	}
-    .nav-buttons div {
+    .mySwiper .nav-buttons div {
 		background-color: rgb(255 255 255);
 		border: solid 1px black;
 		border-radius: 50%;
@@ -67,11 +69,11 @@
 		align-items: center;
 		justify-content: center;
 	}
-    .nav-buttons div img {
+    .mySwiper .nav-buttons div img {
 		cursor: pointer;
 	}
-	.swiper-button-next::after,
-	.swiper-button-prev::after {
+	.mySwiper .swiper-button-next::after,
+	.mySwiper .swiper-button-prev::after {
 		display: none;
 	}
 	.mySwiper .swiper-pagination-bullet {
@@ -92,12 +94,16 @@
 		bottom: 10% !important;
 		top: unset;
 	}
-	.swiper-button-prev,
-	.swiper-rtl .swiper-button-next {
-		left: unset;
-		right: 60px;
+	.mySwiper .swiper-button-prev,
+	.mySwiper .swiper-button-next {
+		
 		bottom: 10%;
 		top: unset;
+	}
+	.mySwiper .swiper-button-next {
+		
+		left: unset;
+		right: 60px;
 	}
 
 	@media (max-width: 1024px) {
@@ -105,60 +111,40 @@
                 border-radius: 0;
                 
             }
-            .nav-buttons{
+            .mySwiper .nav-buttons{
                 display: none;
                 
             }
-			.swiper-pagination-bullet {
+			.mySwiper .swiper-pagination-bullet {
 		        width: 8px;
 		        height: 8px;
 				margin: 0 3px;
 		    }
 		
-		    .swiper-pagination-bullet-active {
+		    .mySwiper .swiper-pagination-bullet-active {
 		        width: 30px;
 		        height: 8px;
 		    }
         }
         @media( max-width: 519px){
-            .slide{
+            .mySwiper .slide{
 
                 height: 190px;
             }
-            .slide img{
+            .mySwiper .slide img{
                 height: 100%;
             }
-			.swiper-pagination-bullet {
+			.mySwiper .swiper-pagination-bullet {
 		        width: 6px;
 		        height: 6px;
 				margin: 0 0.5px;
 		    }
 
-    		.swiper-pagination-bullet-active {
+    		.mySwiper .swiper-pagination-bullet-active {
     		    width: 14px;
     		    height: 6px;
     		}
         }
 </style>
 
-
-
-{{-- <script src="{{asset('plugins/swiper/swiper-bundle.min.js')}}"></script> --}}
-<script>
-	var swiper = new Swiper(".mySwiper", {
-		loop: true,
-		autoplay: {
-			delay: 2000,
-			disableOnInteraction: false,
-		},
-		navigation: {
-			nextEl: ".swiper-button-next",
-			prevEl: ".swiper-button-prev",
-		},
-		pagination: {
-			el: ".swiper-pagination",
-			clickable: true,
-		},
-	});
-</script>
 

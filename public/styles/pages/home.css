@@ -1,35 +1,52 @@
+:root {
+    --primary-color: #e3b000;
+    --secondary-color: #606060;
+    --black: #000000;
+    --background-gray: rgba(96, 96, 96, 0.05);
+    --discount-bg: #FBF2D6;
+    --max-width: 1500px;
+    --font-primary: "IRANSans", sans-serif;
+    --font-secondary: "Snapp", sans-serif;
+}
+
+/* Global Layout */
+body {
+    display: flex;
+    justify-content: center;
+}
+
+/* Top Slider Section */
 .top-slider {
     padding: 0 40px;
-    max-width: 1500px;
+    max-width: var(--max-width);
     box-sizing: border-box;
     width: 100vw;
     margin: auto;
 }
+
+/* Order Process Section */
 .order-process {
     padding: 60px 40px;
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 80px;
-
     justify-items: center;
-    max-width: 1500px;
+    max-width: var(--max-width);
     margin: auto;
 }
-.order-process.items {
-}
+
 .order-process .items .img-icon {
     position: relative;
-    width: max-content;
-    margin: auto;
     width: 67px;
     height: 67px;
-    
+    margin: auto;
 }
 
 .order-process .items .img-icon:hover span {
-    left: 0px;
+    left: 0;
 }
+
 .order-process .items .img-icon span {
     position: absolute;
     width: 100%;
@@ -38,106 +55,210 @@
     bottom: 5px;
     border-radius: 50%;
     transition: all 0.3s ease-out;
-    background: #e3b000;
+    background: var(--primary-color);
     opacity: 0.3;
     z-index: -1;
 }
+
 .order-process .items .img-icon img {
     width: 100%;
     height: 100%;
 }
+
 .order-process .items .title {
-    font-family: "IRANSans";
-    font-style: normal;
+    font-family: var(--font-primary);
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
     text-align: center;
-    color: #000000;
+    color: var(--black);
     display: block;
 }
+
 .order-process .items .description {
-    font-family: "IRANSans";
-    font-style: normal;
+    font-family: var(--font-primary);
     font-weight: 500;
     font-size: 13px;
     line-height: 20px;
     text-align: center;
-    color: #606060;
+    color: var(--secondary-color);
 }
+
+/* Categories Slider Section */
 .categories-slider {
     padding: 0 40px;
-    max-width: 1500px;
+    max-width: var(--max-width);
     box-sizing: border-box;
     width: 100vw;
     margin: auto;
 }
-.categories-slider .categories-slider-title {
+
+/* Sections Title */
+.sections-title {
     display: none;
 }
+
+/* Amazing Discount Slider Section */
 .amazing-discount-slider {
     width: 100vw;
-    padding:  00px 40px 20px 40px;
     margin: auto;
-    max-width: 1500px;
+    max-width: 1440px;
     box-sizing: border-box;
+    overflow: hidden;
 }
-.amazing-discount-slider .amazing-discount-slider-title{
+
+.amazing-discount-slider .amazing-discount-slider-title {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 5px;
     margin: 2vmax 0;
 }
+
 .amazing-discount-slider .amazing-discount-slider-title span {
-    font-family: "Snapp";
-    font-style: normal;
-    font-weight: 600;
+    font-family: var(--font-secondary);
+    font-weight: 100;
     font-size: clamp(1rem, 3vw, 1.8rem);
     line-height: 50px;
     text-align: right;
-    color: #e3b000;
-    
-
-
+    color: var(--primary-color);
 }
-.amazing-discount-slider .amazing-discount-slider-title img{
+
+.amazing-discount-slider .amazing-discount-slider-title img {
     width: 3vmax;
-}
-.brands{
-    background: rgba(96, 96, 96, 0.05);
-    box-sizing: border-box;
-    padding: 30px;
-    margin: 10px;
+    max-width: 50px;
+    min-width: 20px;
 }
 
+/* See All Button */
+.see-all {
+    text-decoration: none;
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 36px;
+    color: var(--primary-color);
+    border: 1px solid rgba(96, 96, 96, 0.5);
+    box-sizing: border-box;
+    padding: 5px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: max-content;
+    margin: 15px auto;
+}
+
+.discounts .see-all {
+    background-color: var(--discount-bg);
+    border: none;
+}
+
+/* Brands Section */
+.brands {
+    background: var(--background-gray);
+    box-sizing: border-box;
+    padding: 70px 0;
+    margin: 20px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+.brands-title {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 1.5rem;
+---------line-height: 48px;
+    text-align: center;
+    color: var(--black);
+    margin-bottom: 20px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: inline-block;
+}
+
+.brands .see-all {
+    position: absolute;
+    bottom: 0;
+}
+
+.brands .see-all img {
+    display: none;
+}
+
+/* Banners Section */
+.baners {
+    width: 100vw;
+    max-width: 1400px;
+    margin: 20px auto;
+}
+
+/* Product Section */
+.product {
+    width: 100vw;
+    max-width: 1440px;
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+.product .product-title {
+    font-family: 'IranSansMedium', var(--font-primary);
+    font-style: normal;
+    font-size: 24px;
+    line-height: 48px;
+    text-align: center;
+    color: var(--black);
+    display: block;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
+    
     .top-slider {
-        padding: 0px;
+        padding: 0;
     }
+
     .order-process {
         grid-template-columns: repeat(2, 1fr);
         gap: 40px;
         padding: 40px 20px;
     }
+
     .order-process .items .img-icon {
         height: 40px;
         width: 40px;
     }
+
     .order-process .items .title {
         font-size: 13px;
         line-height: 18px;
     }
+
     .order-process .items .description {
         display: none;
     }
+
     .categories-slider {
         padding: 0;
         background-color: #f6f6f6;
         padding-top: 10px;
         padding-bottom: 40px;
     }
-    .categories-slider .categories-slider-title {
+
+    .sections-title {
         width: 100vw;
         padding: 10px;
         display: flex;
@@ -145,35 +266,93 @@
         justify-content: space-between;
         box-sizing: border-box;
     }
-    .categories-slider .categories-slider-title span {
-        font-family: "IRANSans";
-        font-style: normal;
+
+    .sections-title span {
+        font-family: var(--font-primary);
         font-weight: 700;
         font-size: 14px;
         line-height: 21px;
         text-align: center;
-
-        color: #000000;
+        color: var(--black);
     }
-    .categories-slider .categories-slider-title a {
+
+    .sections-title a {
         text-decoration: none;
-        font-family: "IRANSans";
-        font-style: normal;
+        font-family: var(--font-primary);
         font-weight: 400;
         font-size: 12px;
         line-height: 18px;
-
         text-align: center;
-
-        color: #e3b000;
+        color: var(--primary-color);
         display: flex;
         align-items: center;
         gap: 5px;
     }
-    .brands{
-        margin-left: 0;
-        margin-right: 0;
-        padding-right: 0;
-        padding-left: 0;
+
+    .discounts .see-all {
+        font-size: small;
+    }
+
+    .brands {
+        margin: 0;
+        padding: 30px 0;
+        padding-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .brands .brands-title {
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        font-family: var(--font-primary);
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: right;
+        color: var(--black);
+        transform: translateX(0);
+    }
+
+    .brands .brands-title span {
+        display: none;
+    }
+
+    .brands .see-all {
+        text-decoration: none;
+        font-family: var(--font-primary);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+        color: var(--primary-color);
+        left: 10px;
+        top: 20px;
+        border: none;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        gap: 5px;
+    }
+
+    .brands .see-all img {
+        display: inline-block;
+    }
+
+    .product .see-all {
+        display: none;
+    }
+
+    .product {
+        padding: 0;
+    }
+
+    .product .product-title {
+        display: none;
+    }
+    .baners{
+        overflow: hidden;
     }
 }

@@ -9,12 +9,12 @@
     
     
     @endpush 
-    <script src="{{asset('plugins/swiper/swiper-bundle.min.js')}}" ></script>
+    
+
 
     <!-- Header section  -->
     @section('header')
          @include('components.header')
-         
     @endsection
 
     <!-- Main content  -->
@@ -69,7 +69,7 @@
 
             </div>
             <div  class="categories-slider">
-                <div class="categories-slider-title">
+                <div class="sections-title">
                     <span>دسته بندی ها</span>
                     <a href="#">مشاهده همه <img src="{{asset('icons/ui/next-icon-mobile.svg')}}" alt="next"></a>
                 </div>
@@ -80,21 +80,53 @@
                     <img src="{{asset('icons/ui/takhfif-icon.svg')}}" alt="amazing discount">
                     <span>تخفیف های شگفت انگیز</span>
                 </div>
-                @include('components.sliders.discounts')
+                <div class="discounts">
+                    @include('components.sliders.discounts')
+                    <a class="see-all" href="#">مشاهده همه <img src="{{asset('/icons/ui/next-icon-mobile.svg')}}" alt="next"></a>
+                </div>
+                
             </div>
             <div class="brands">
+                <span class="brands-title">برترین برند ها<span>ی</span><span style="color: #e3b000;">&nbsp;مد و لباس</span><span>&nbsp;ترک</span></span>
                 @include('components.sliders.brands')
+                <a class="see-all" href="#">مشاهده همه <img src="{{asset('/icons/ui/next-icon-mobile.svg')}}" alt="next"></a>
+                
             </div>
-             
+            <div class="product">
+                <span class="product-title">محبوب ترین ها</span>
+                <div class="sections-title">
+                    <span>محبوب ترین ها</span>
+                    <a href="#">مشاهده همه <img src="{{asset('icons/ui/next-icon-mobile.svg')}}" alt="next"></a>
+                </div>
+                @include('components.sliders.products')
+                <a class="see-all" href="#">مشاهده همه <img src="{{asset('/icons/ui/next-icon-mobile.svg')}}" alt="next"></a>
+            </div>
+            
+            
+            
+            <div class="baners">
+                @include('components.sliders.baners')
+            </div>
+            <div class="product">
+                <span class="product-title">جدید ترین ها</span>
+                <div class="sections-title">
+                    <span>جدید ترین ها</span>
+                    <a href="#">مشاهده همه <img src="{{asset('icons/ui/next-icon-mobile.svg')}}" alt="next"></a>
+                </div>
+                @include('components.sliders.products')
+                <a class="see-all" href="#">مشاهده همه <img src="{{asset('/icons/ui/next-icon-mobile.svg')}}" alt="next"></a>
+            </div>
+            
             @include('layouts.commitments')
-        
+         
         </div>
-        @include('layouts.auth-modal')
+        
     @endsection
     
     @push('scripts') 
-    
-    
+        <script src="{{asset('plugins/swiper/swiper-bundle.min.js')}}" ></script>
+        <script src="{{ asset('scripts/components/sliders/custom-swipers.js') }}"></script> 
+        
     @endpush
 
     <!-- Footer section  -->
@@ -105,6 +137,5 @@
     <!-- Script section (optional)  -->
     <!-- Uncomment and add custom scripts if needed -->
 
-    <script>
-
-    </script>
+    
+    
