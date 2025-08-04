@@ -4,17 +4,16 @@
     <div class="swiper-wrapper">
       <!-- Slides -->
       <div class="swiper-slide">
-          <a href="#">
-              <div>5%</div>
+          
+              <a href="#">5%</a>
               <div class="swiper-discounts-img">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="" alt=""></div>
-                </div>
+                    @include('components.sliders.nested-swiper')
               </div>
-              <samp class="swiper-discounts-title">كفش مجلسي زنانه رنگ مشکی...</samp>
-              <del class="old-price">250,000 تومان</del>
-              <samp class="new-price">4.458.700 تومان</samp>
-          </a>
+            <a href="#">
+                <samp class="swiper-discounts-title">كفش مجلسي زنانه رنگ مشکی...</samp>
+                <del class="old-price">250,000 تومان</del>
+                <samp class="new-price">4.458.700 تومان</samp>
+            </a>
       </div>
       
     </div>
@@ -23,9 +22,7 @@
 
 
 <style>
-    .swiper-discounts{
-      width: 100%;
-    }
+    
     .swiper-discounts{
         width: 100% !important; 
     }
@@ -39,35 +36,18 @@
     }
     .swiper-products .swiper-button-prev,
     .swiper-products .swiper-button-next {
-        position: absolute !important;
-        z-index: 10 !important;
-        top: unset !important;
-        bottom: 50% !important;
-        display: inline-flex !important ;
-        transform: translate(-50%, 50%);
-        align-items: center;
-        justify-content: center;
+        display: none !important;
     }
-    .swiper-products .swiper-button-prev img,
-    .swiper-products .swiper-button-next img {
-        width: 15px;
-        height: auto;
-    }
-    .swiper-products .swiper-button-next {
-        left: 0px !important;
-        right: unset !important;
-        transform: translateX(50%) translateY(50%);
-    }
-    .swiper-products .swiper-button-prev {
-        right: 0px !important;
-        left: unset !important;
-    }
+    
+    
     .swiper-products .swiper-wrapper .swiper-slide{
         background: none !important;
         border-radius: 12px;
-        padding: 0px !important ;
+        background-color: #F7F7F7;
         box-sizing: border-box;
         min-width: 150px;
+        box-sizing: border-box;
+        padding: 20px !important;
 
     }
     .swiper-discount .swiper-wrapper .swiper-slide .slide-link{

@@ -53,4 +53,25 @@
     .megamenu-brands-swiper .mega-brand-item img {
         width: 80%;
     }
+     @media (max-width: 991px) {
+        .megamenu-brands-swiper {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-height: none;
+            height: auto;
+            direction: rtl;
+            max-width: 100%;
+        }
+
+        .megamenu-brands-swiper .mega-brand-item {
+            min-width: 70px; 
+        }
+
+        .megamenu-brands-swiper::-webkit-scrollbar {
+            height: 8px;
+            width: 0;
+        }
+    }
 </style>

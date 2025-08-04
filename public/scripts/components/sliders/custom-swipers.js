@@ -186,5 +186,21 @@ document.addEventListener("DOMContentLoaded", function () {
             delay: 2000,
             disableOnInteraction: false,
         },
+        spaceBetween: 10,
+        breakpoints: {
+            0: {
+                slidesPerView: 2,
+            },
+            768: {
+                slidesPerView: 3,
+            },
+            1024: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+            },
+        },
+        pagination: {
+            el: el.querySelector(".swiper-pagination"),
+        },
     }));
 });

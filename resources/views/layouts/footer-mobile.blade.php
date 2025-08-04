@@ -1,7 +1,7 @@
 <style>
     .footer-mobile{
         width: 100vw;
-        padding: 10px  15px;
+        padding: 10px  20px;
         box-sizing: border-box;
         position: fixed;
         bottom: 0px;
@@ -63,7 +63,7 @@
     .categories-popup{
         position: fixed;
         width: 100%;
-        height:100%;
+        height:100vh;
         z-index: 1001;
         top: 0px;
         right: 0;
@@ -76,6 +76,16 @@
     }
     .categories-popup-header{
         top: 0;
+        padding:15px 20px ;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: solid 1px rgb(0, 0, 0, 0.08);
+        
+    }
+    .categories-popup-header button{
+        all: unset;
     }
     @media (min-width: 1024px){
         .footer-mobile{
@@ -123,6 +133,13 @@
 </div>
 <div class="categories-popup ">
     <div class="categories-popup-header" >
+        
+        <button type="button"  onclick=""> 
+            <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.8" d="M21.1284 20.6556L15.8303 15.3576C17.2741 13.5918 17.984 11.3387 17.8131 9.06419C17.6422 6.78971 16.6036 4.66793 14.9122 3.13772C13.2208 1.6075 11.0059 0.785933 8.72575 0.842945C6.44558 0.899956 4.27454 1.83119 2.66171 3.44402C1.04888 5.05685 0.117653 7.22788 0.0606418 9.50805C0.0036303 11.7882 0.825199 14.0031 2.35541 15.6945C3.88563 17.3859 6.00741 18.4245 8.28188 18.5954C10.5564 18.7663 12.8095 18.0564 14.5753 16.6126L19.8733 21.9107C20.0407 22.0723 20.2649 22.1618 20.4976 22.1598C20.7304 22.1578 20.953 22.0644 21.1175 21.8998C21.2821 21.7353 21.3755 21.5127 21.3775 21.2799C21.3795 21.0472 21.29 20.823 21.1284 20.6556ZM8.96217 16.8452C7.55778 16.8452 6.18493 16.4287 5.01722 15.6485C3.84951 14.8683 2.9394 13.7593 2.40196 12.4618C1.86452 11.1643 1.72391 9.73659 1.99789 8.35919C2.27187 6.98178 2.94815 5.71656 3.9412 4.72351C4.93426 3.73045 6.19948 3.05417 7.57689 2.78019C8.95429 2.50621 10.382 2.64683 11.6795 3.18426C12.977 3.7217 14.086 4.63182 14.8662 5.79952C15.6464 6.96723 16.0629 8.34008 16.0629 9.74447C16.0608 11.627 15.312 13.4319 13.9808 14.7631C12.6496 16.0943 10.8447 16.8431 8.96217 16.8452Z" fill="black"/>
+            </svg>
+
+        </button>
         <button type="button"  onclick="toggleActive()">
             <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.8" d="M0.00163583 10.2762C-0.00119751 10.3043 0.000219159 10.2548 0.00163583 10.2762V10.2762ZM19.1266 9.4512H1.54722C1.65205 9.11128 1.82347 8.79117 2.06005 8.52055L7.65305 1.84929C7.92647 1.52258 7.9208 0.999503 7.6403 0.682689C7.36122 0.364224 6.91355 0.372474 6.63872 0.695889L1.05564 7.35725C0.377052 8.13773 0.00163583 9.23999 0.00163583 10.2779C0.0115525 11.3075 0.351553 12.3982 1.01597 13.1837L6.57355 19.9259C6.71239 20.0942 6.89797 20.1783 7.08497 20.1783C7.26205 20.1783 7.43914 20.1024 7.57514 19.9473C7.85705 19.6338 7.86697 19.1091 7.59639 18.7807L2.03172 12.0303C1.80222 11.7597 1.63647 11.4412 1.5373 11.1029H19.1266C19.5176 11.1029 19.835 10.7333 19.835 10.2779C19.835 9.82246 19.5176 9.45285 19.1266 9.45285V9.4512Z" fill="black"/>
@@ -134,37 +151,67 @@
     </div>
 </div>
 <script>
-    function toggleActive() {
-        const button = document.getElementById('footer-mobile-button');
-        const currentActive = document.querySelector('.footer-mobile .active');
-        const categoriesPopup = document.querySelector('.categories-popup');
+  // Toggle active state for footer-mobile button and manage popup visibility
+  function toggleActive() {
+    const button = document.getElementById('footer-mobile-button');
+    const currentActive = document.querySelector('.footer-mobile .active');
+    const categoriesPopup = document.querySelector('.categories-popup');
 
-        if (button.classList.contains('active')) {
-            button.classList.remove('active');
+    if (button.classList.contains('active')) {
+      // Deactivate the button
+      button.classList.remove('active');
 
-            if (toggleActive.lastActiveElement) {
-                toggleActive.lastActiveElement.classList.add('active');
-                toggleActive.lastActiveElement = null;
-            }
+      // Restore last active element if available
+      if (toggleActive.lastActiveElement) {
+        toggleActive.lastActiveElement.classList.add('active');
+        toggleActive.lastActiveElement = null;
+      }
 
-            // حذف کلاس open وقتی دکمه غیرفعال شد
-            if (categoriesPopup) {
-                categoriesPopup.classList.remove('open');
-            }
-        } else {
-            if (currentActive && currentActive !== button) {
-                toggleActive.lastActiveElement = currentActive;
-                currentActive.classList.remove('active');
-            }
+      // Hide popup
+      if (categoriesPopup) {
+        categoriesPopup.classList.remove('open');
+      }
+    } else {
+      // Save current active element before deactivating
+      if (currentActive && currentActive !== button) {
+        toggleActive.lastActiveElement = currentActive;
+        currentActive.classList.remove('active');
+      }
 
-            button.classList.add('active');
+      // Activate the button
+      button.classList.add('active');
 
-            // اضافه کردن کلاس open وقتی دکمه فعال شد
-            if (categoriesPopup) {
-                categoriesPopup.classList.add('open');
-            }
-        }
+      // Show popup
+      if (categoriesPopup) {
+        categoriesPopup.classList.add('open');
+      }
     }
 
+    // Update popup height after toggle
+    updateDataListHeight();
+  }
 
+  // Select necessary DOM elements
+  const footerMobile = document.querySelector('.footer-mobile');
+  const popupHeader = document.querySelector('.categories-popup-header');
+  const dataList = document.querySelector('.categories-popup .data-list');
+
+  // Update height of data list based on screen and visible elements
+  const updateDataListHeight = () => {
+    if (dataList && popupHeader && footerMobile) {
+      const windowHeight = window.innerHeight;
+      const headerHeight = popupHeader.offsetHeight;
+      const footerHeight = footerMobile.offsetHeight;
+      const newHeight = windowHeight - headerHeight - footerHeight;
+
+      dataList.style.height = `${newHeight}px`;
+      dataList.style.overflowY = 'auto'; // Enable vertical scrolling if needed
+    }
+  };
+
+  // Initial height setup
+  updateDataListHeight();
+
+  // Update height on window resize
+  window.addEventListener('resize', updateDataListHeight);
 </script>

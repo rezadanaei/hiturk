@@ -175,7 +175,8 @@
             const authModel = document.querySelector(".auth-model"); 
             authContainer.classList.add("open-auth-continer");
             authModel.classList.add("open-auth-model");
-        
+            authContainer.style.zIndex = 999;
+            
         }
         buttonAuth = document.querySelector(".button-auth");
         buttonAuth.addEventListener("click", openAuthModel);

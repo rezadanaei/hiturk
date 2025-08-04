@@ -149,6 +149,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const handleCloseAuth = () => {
         authContainer.classList.remove("open-auth-continer");
         authModel.classList.remove("open-auth-model");
+        setTimeout(() => {
+            authContainer.style.zIndex = -10;
+        }, 300);
     };
 
     // Event Bindings

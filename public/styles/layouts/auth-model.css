@@ -11,7 +11,7 @@
 }
 .open-auth-continer {
     background-color: rgba(0, 0, 0, 0.35);
-    z-index: 999;
+    
 }
 .auth-model {
     display: flex;

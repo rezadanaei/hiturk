@@ -182,10 +182,13 @@
         display: block;
     }
     @media (max-width: 1024px) {
+        header{
+            padding: 0 20px;
+        }
         .navigation-general{
             height: 60px;
             box-sizing: border-box;
-            padding: 20px;
+            padding: 20px 0;
 
         }
         .desktop-only{
@@ -287,7 +290,7 @@
     </div>
     <div class="dropdown"  >
         <div class="category" X-data ='category'>
-            @include('layouts.category-dropdown')
+            {{-- @include('layouts.category-dropdown') --}}
         </div>
     </div>
 </header>
