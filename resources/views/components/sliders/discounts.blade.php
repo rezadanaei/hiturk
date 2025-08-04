@@ -1,20 +1,24 @@
 <!-- Slider main container -->
-<div class="swiper-discounts">
+<div class="swiper-discounts swiper">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
-      <div class="swiper-slide">
-          
-              <a href="#">5%</a>
-              <div class="swiper-discounts-img">
-                    @include('components.sliders.nested-swiper')
-              </div>
-            <a href="#">
+      @foreach (range(1, 10) as $slide )
+          <div class="swiper-slide">
+
+            <a href="#" class="slide-link offer">5%</a>
+            <div class="nested">
+                @include('components.sliders.nested-swiper')
+            </div>
+            <a href="#" class="slide-link">
                 <samp class="swiper-discounts-title">كفش مجلسي زنانه رنگ مشکی...</samp>
                 <del class="old-price">250,000 تومان</del>
                 <samp class="new-price">4.458.700 تومان</samp>
             </a>
-      </div>
+            
+        </div>
+      @endforeach
+      
       
     </div>
     
@@ -30,28 +34,27 @@
         height: auto !important;
     }
     
-    .swiper-products .swiper-button-prev::after,
-    .swiper-products .swiper-button-next::after {
+    .swiper-discounts .swiper-button-prev::after,
+    .swiper-discounts.swiper-button-next::after {
         display: none;
     }
-    .swiper-products .swiper-button-prev,
-    .swiper-products .swiper-button-next {
+    .swiper-discounts .swiper-button-prev,
+    .swiper-discounts .swiper-button-next {
         display: none !important;
     }
     
     
-    .swiper-products .swiper-wrapper .swiper-slide{
+    .swiper-discounts .swiper-slide{
         background: none !important;
         border-radius: 12px;
-        background-color: #F7F7F7;
+        background-color: #F7F7F7 !important;
         box-sizing: border-box;
         min-width: 150px;
         box-sizing: border-box;
-        padding: 20px !important;
-
+        padding: 20px 20px 0px 20px !important; 
     }
-    .swiper-discount .swiper-wrapper .swiper-slide .slide-link{
-        text-decoration: none;
+    .swiper-discounts .slide-link{
+        text-decoration: none !important;
         
     }
     .swiper-discounts .swiper-wrapper .swiper-slide .nested{
@@ -60,11 +63,11 @@
         box-sizing: border-box;
         
     }
-    .swiper-products .swiper-wrapper .swiper-slide .offer{
+    .swiper-discounts .swiper-slide .offer{
         position: absolute;
         top: 50px;
-        left: 0px !important;
-        background-color: #E3B000 !important;
+        left: 15px !important;
+        background-color: #F7F7F7 !important;
         z-index: 5;
         padding: 0px 10px !important;
         border-radius: 0px 20px 20px 0px;
@@ -76,14 +79,14 @@
         text-align: right;
         text-decoration: none;
         /* Black */
-        color: white !important;
+        color: black !important;
         display: flex;
         align-items: center;
         justify-content: center;
 
 
     }
-    .swiper-products .swiper-wrapper .swiper-slide .slide-link .swiper-discounts-title , .swiper-discounts .swiper-wrapper .swiper-slide .slide-link .old-price, .swiper-discounts .swiper-wrapper .swiper-slide .slide-link .new-price{
+    .swiper-discounts .swiper-wrapper .swiper-slide .slide-link .swiper-discounts-title , .swiper-discounts .swiper-wrapper .swiper-slide .slide-link .old-price, .swiper-discounts .swiper-wrapper .swiper-slide .slide-link .new-price{
         display: block;
         margin: 10px !important;
     }
@@ -120,25 +123,18 @@
 
         color: #E3B000;
     }
+    @media (max-width:420px){
+        .swiper-discounts .swiper-slide{
+            padding: 15px 15px 0px 15px !important; 
+        }
+    }
 
 </style>
 
-{{-- <script>
-    var categorySwiper = new Swiper(".swiper-discounts", {
-		slidesPerView: 6, 
-		spaceBetween: 15,
-
-		breakpoints: {
-            
-            0: { slidesPerView: 3.3, spaceBetween: 8 }, 
-            640: { slidesPerView: 5, spaceBetween: 8 }, 
-            1024: { slidesPerView: 6, spaceBetween: 15 }, 
-        },
-	});
-  </script> --}}
 
 
-<!-- Slider main container -->
+
+{{-- <!-- Slider main container -->
 <div class="swiper">
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
@@ -157,4 +153,4 @@
 
   <!-- If we need scrollbar -->
   <div class="swiper-scrollbar"></div>
-</div>
+</div> --}}

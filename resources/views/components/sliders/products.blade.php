@@ -73,7 +73,7 @@
         min-width: 150px;
 
     }
-    .swiper-discount .swiper-wrapper .swiper-slide .slide-link{
+    .swiper-discounts .slide-link{
         text-decoration: none;
         
     }

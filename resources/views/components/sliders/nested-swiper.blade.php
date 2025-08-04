@@ -149,11 +149,6 @@
         object-fit: cover;
     }
     @media (max-width: 1024px){
-        .swiper-discounts .swiper-wrapper .swiper-slide .offer {
-            top: 40px !important;
-            font-size: 14px !important;
-            line-height: 30px !important;
-        }
         .nested-swiper .circle {
           width: 12px;
           height: 12px;
@@ -164,6 +159,15 @@
         }
         .nested-swiper .image-preview{
             display: none !important;
+        }
+        .nested-swiper .clothes-gallery{
+            right: 10px;
+        }
+        
+    }
+    @media (max-width: 300px){
+        .nested-swiper .clothes-gallery{
+            right: 5px;
         }
         
     }
