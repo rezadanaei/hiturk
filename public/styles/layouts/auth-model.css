@@ -38,7 +38,7 @@
     all: unset;
     width: 30px;
     height: 30px;
-    position: relative;
+    /* position: relative; */
     cursor: pointer;
     position: absolute;
     top: 15px;

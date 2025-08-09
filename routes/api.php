@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SearchController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::post('/check-phonenumber', [AuthController::class, 'checkPhoneNumber']);
+Route::post('/live-search', [SearchController::class, 'liveSearch'])->name('live-search');

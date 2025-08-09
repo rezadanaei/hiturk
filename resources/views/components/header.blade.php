@@ -39,32 +39,14 @@
     }
     .search-btm{
         position: absolute;
-        background-color: rgba(96, 96, 96, 0.08);
-        border-radius: 12px;
         width: 40%;
         max-width: 700px;
         height: calc(100% - 40px);
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 10px;
-        padding: 0 20px;
         box-sizing: border-box;
-
-    }
-    .search-btm > span {
-        font-family: 'IRANSans';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 1rem;
-        line-height: 30px;
-        color: #000000;
-        opacity: 0.4;
-
-
+        z-index: 10;
     }
     .desktop-only{
         display: flex;
@@ -154,7 +136,7 @@
     }
     .dropdown{
         position: absolute;
-        top: 0%;
+        top: 0;
         opacity: 0;
         width:calc(100% - 70px);
         max-width: 1440px;
@@ -163,7 +145,7 @@
         border-radius: 0 0px 20px 20px; 
         box-sizing: border-box;
         margin: auto;
-        z-index: 990;
+        z-index: -100;
         left: 50%;
         transform: translateX(-50%);
         display: block;
@@ -174,12 +156,13 @@
     .down{
         top: 100%;
         opacity: 1;
+        z-index: 990;
     }
     .dropdown > * {
-        display: none;
+        opacity: 0;
     }
     .dropdown .show{
-        display: block;
+        opacity: 1;
     }
     @media (max-width: 1024px) {
         header{
@@ -202,13 +185,9 @@
         }
         .search-btm{
             all: unset;
-            widows: auto;
-        }
-        .search-btm img {
-            filter: brightness(0) saturate(100%) invert(42%) sepia(4%) saturate(160%) hue-rotate(150deg);
-            height: 21px;
             width: auto;
         }
+        
         .search-btm > span{
             display: none;
         }
@@ -246,13 +225,7 @@
                 <img  src="{{asset('icons/ui/wishlist.svg')}}" alt="">
             </a>
             <div class="search-btm">
-                <picture>
-                    <source srcset="{{asset('icons/ui/search-icon-mobile.svg')}}" media="(max-width: 1024px)">
-                    
-                    <img src="{{asset('icons/ui/search-icon.svg')}}" alt="search">
-                </picture>
-                
-                <span>جستجو در های‌ترک</span>
+                @include('layouts.search')
             </div>
             <a class="logo-link" href="{{ route('home') }}">
                 <img  src="{{asset('icons/logo/hiturk.svg')}}" alt="">
@@ -290,7 +263,7 @@
     </div>
     <div class="dropdown"  >
         <div class="category" X-data ='category'>
-            {{-- @include('layouts.category-dropdown') --}}
+            @include('layouts.category-dropdown', ['device' => 'desktop'])
         </div>
     </div>
 </header>

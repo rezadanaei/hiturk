@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,8 +43,13 @@ Route::middleware(['meta-tags'])->group(function () {
     Route::get('/policy', function () {
         return view('pages/policy');
     })->name('policy');
+    Route::get('/archive', function (Request $request) {
+        $name = $request->query('name');
+        dd($name);
+    })->name('archive');
     
 });
+
 Route::get('/test', function () {
     return view('pages/test');
 })->name('test');
