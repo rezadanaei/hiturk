@@ -3,7 +3,9 @@
     <!-- Style section (optional)  -->
     <!-- Uncomment and add custom styles if needed -->
     @push('styles') 
-    <link rel="stylesheet" href="{{ asset('styles/pages/policy.css') }}"> 
+        <link rel="stylesheet" href="{{ asset('styles/global/fonts.css') }}"> 
+        <link rel="stylesheet" href="{{ asset('styles/global/fonts2.css') }}"> 
+        <link rel="stylesheet" href="{{ asset('styles/pages/policy.css') }}"> 
     @endpush  
 
     <!-- Header section  -->

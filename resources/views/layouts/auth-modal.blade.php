@@ -8,7 +8,7 @@
 @endphp
 
 
-<form id="auth-model-continer" class="auth-continer {{ session('phone_error') || session('otp_error') ? 'open-auth-continer' : '' }} " action="{{ url('/login') }}" method="POST">
+<form id="auth-model-continer" class="auth-continer {{ session('phone_error') || session('otp_error') ? 'open-auth-continer z-index-auth-continer' : '' }} " action="{{ url('/login') }}" method="POST">
     @csrf
     <div class="auth-model {{ session('phone_error') || session('otp_error') ? 'open-auth-model' : '' }}">
         <button type="button" class="close-icon"></button>
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
         authContainer.classList.remove("open-auth-continer");
         authModel.classList.remove("open-auth-model");
         setTimeout(() => {
-            authContainer.style.zIndex = -10;
+            authContainer.classList.remove("z-index-auth-continer");    
         }, 300);
     };
 

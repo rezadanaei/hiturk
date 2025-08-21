@@ -47,13 +47,16 @@
         transform: translate(-50%,-50%);
         box-sizing: border-box;
         z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center
     }
     .desktop-only{
         display: flex;
         align-items: center;
     }
     .logo-link{
-        height: calc(100% - 20px);;
+        height: calc(100% - 40px);;
         text-decoration: none;
         position: absolute;
         top: 50%;
@@ -83,7 +86,6 @@
 
         font-family: 'IRANSans';
         font-style: normal;
-        font-weight: 500;
         font-size: 16px;
         line-height: 24px;
         color: #606060;
@@ -146,6 +148,7 @@
         box-sizing: border-box;
         margin: auto;
         z-index: -100;
+        pointer-events: none;
         left: 50%;
         transform: translateX(-50%);
         display: block;
@@ -157,6 +160,7 @@
         top: 100%;
         opacity: 1;
         z-index: 990;
+        pointer-events: auto;
     }
     .dropdown > * {
         opacity: 0;
@@ -221,7 +225,7 @@
                 @include('layouts.auth-button')
                 
             </div>
-            <a class="wishlist-link" href="#">
+            <a class="wishlist-link" href="{{ route('user.dashboard', ['tab' => '8']) }}">
                 <img  src="{{asset('icons/ui/wishlist.svg')}}" alt="">
             </a>
             <div class="search-btm">
@@ -235,10 +239,14 @@
         <div class="navigation-catrgories">
             <ul class="main-list">
                 <li class="top-list  products-categories" X-data ='category' >
-                    <img src="{{asset('icons/ui/meno-hamberger.svg')}}" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="13" viewBox="0 0 17 13" fill="none">
+                        <path d="M15.9375 5.4375H1.0625C0.475701 5.4375 0 5.9132 0 6.5C0 7.0868 0.475701 7.5625 1.0625 7.5625H15.9375C16.5243 7.5625 17 7.0868 17 6.5C17 5.9132 16.5243 5.4375 15.9375 5.4375Z" fill="currentColor"/>
+                        <path d="M1.0625 2.60417H15.9375C16.5243 2.60417 17 2.12847 17 1.54167C17 0.954873 16.5243 0.479172 15.9375 0.479172H1.0625C0.475701 0.479172 0 0.954873 0 1.54167C0 2.12847 0.475701 2.60417 1.0625 2.60417Z" fill="currentColor"/>
+                        <path d="M15.9375 10.3958H1.0625C0.475701 10.3958 0 10.8715 0 11.4583C0 12.0451 0.475701 12.5208 1.0625 12.5208H15.9375C16.5243 12.5208 17 12.0451 17 11.4583C17 10.8715 16.5243 10.3958 15.9375 10.3958Z" fill="currentColor"/>
+                    </svg>
                     دسته بندی ها
                 </li>
-                <li class="top-list direct-link" x-data='Xdata'>
+                <li class="top-list direct-link" >
                     <a href="#">شگفت انگیز</a>
                 </li>
                 <hr class="vertical-line">

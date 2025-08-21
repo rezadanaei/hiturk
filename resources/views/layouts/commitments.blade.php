@@ -48,8 +48,8 @@
 </div>
 <div class="contact-us-mobile">
     <span class="title">ارتباط با ما</span>
-        <p class="normal">شماره تماس : <span class="bold">34278606-044</span><br>
-فکس: <span class="bold">34278606-044</span><br>
+        <p class="normal">شماره تماس : <span class="bold-c">34278606-044</span><br>
+فکس: <span class="bold-c">34278606-044</span><br>
 ایران ، آذربایجان غربی ، منطقه آزاد ماکو ، شهرستان شوط</p>
 </div>
 <div class="aggregated-data">
@@ -76,8 +76,8 @@
     </div>
     <div class="contact-us">
         <span class="title">ارتباط با ما</span>
-        <p class="normal">شماره تماس : <span class="bold">34278606-044</span><br>
-فکس: <span class="bold">34278606-044</span><br>
+        <p class="normal">شماره تماس : <span class="bold-c">34278606-044</span><br>
+فکس: <span class="bold-c">34278606-044</span><br>
 ایران ، آذربایجان غربی ، منطقه آزاد ماکو ، شهرستان شوط</p>
     </div>
     <div class="contact-methods">
@@ -188,7 +188,7 @@
 
         font-family: 'IRANSans';
         font-style: normal;
-        font-weight: 500;
+        font-weight: 400;
         font-size: 16px;
         line-height: 24px;
             
@@ -241,7 +241,7 @@
     .aggregated-data .about-us .title , .aggregated-data .quick-access .title , .aggregated-data .customer-service .title ,.aggregated-data .contact-us .title , .aggregated-data .contact-methods .title {
         font-family: 'IRANSans';
         font-style: normal;
-        font-weight: 500;
+        font-weight: 400;
         font-size: 18px;
         line-height: 173.02%;
         text-align: right;
@@ -262,7 +262,7 @@
 
         font-family: 'VazirFD';
         font-style: normal;
-        font-weight: 900;
+        font-weight: 600;
         font-size: 14px;
         line-height: 23px;
 
@@ -273,7 +273,7 @@
     .aggregated-data .about-us .number-contact{
         font-family: 'IranSans';
         font-style: normal;
-        font-weight: 900;
+        font-weight: 600;
         font-size: 14px;
         line-height: 23px;
 
@@ -308,8 +308,8 @@
         text-align: right;        
         color: #000000;
     }
-    .aggregated-data .contact-us .bold, .contact-us-mobile .bold{
-        font-family: 'VazirBoldFD';
+    .aggregated-data .contact-us .bold-c, .contact-us-mobile .bold-c{
+        font-family: 'VazirBoldFD' !important;
     }
     .aggregated-data .contact-methods .description{
         font-family: 'VazirLightFD';
@@ -407,7 +407,7 @@
         border-radius: 24px;
         font-family: 'IRANSans';
         font-style: normal;
-        font-weight: 700;
+        font-weight: 500;
         font-size: 16px;
         line-height: 24px;
         text-align: right;

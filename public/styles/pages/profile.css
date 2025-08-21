@@ -1,0 +1,511 @@
+/* Global */
+:root {
+    --main: #E3B000;
+    --second: #606060;
+    --black: black;
+}
+
+.color {
+    color: var(--main);
+}
+.bold {
+    color: black;
+    font-weight: bold;
+}
+.active-border {
+    border: 2px solid var(--main) !important;
+}
+.center {
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
+
+/* Main */
+.main-container {
+    margin: 0 auto;
+    padding: 30px 60px !important;
+    font-family: 'VazirFD';
+    color: var(--second);
+    direction: rtl;
+    line-height: 1.8;
+    max-width: 1440px;
+}
+.main-container p {
+    text-align: justify, right;
+}
+.main-container strong {
+    color: var(--black);
+}
+
+body {
+    background-color: #F5F5F5;
+}
+.website-description .fade-out{
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #F5F5F5 100%) !important;
+}
+.top-button {
+    background-color: #F5F5F5 !important;
+}
+
+.nestedContainer {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.sidebar {
+    width: 250px;
+    background: #fff;
+    padding: 24px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.menu-item {
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    color: black;
+}
+.menu-item:hover, .menu-item.active {
+    background: #d9d9d93e;
+    border-radius: 12px;
+}
+.menu-item .left {
+    display: none;
+}
+.menu-item .icon {
+    width: 24px;
+    height: auto;
+    object-fit: contain;
+}
+
+.desktopContent {
+    flex: 1;
+}
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+.is-part {
+    background-color: white;
+    padding: 24px;
+    border-radius: 24px;
+    margin-block: 16px;
+    box-sizing: border-box;
+}
+.profile-dash-info {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+}
+.profile-dash-info h2 {
+    margin: 0;
+    font-size: 22px;
+}
+.profile-dash-info button {
+    all: unset;
+    color: white;
+    background-color: var(--main);
+    padding: 6px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+.profile-dash-info button:hover {
+    filter: brightness(0.95);
+    background-color: var(--main);
+}
+.alert-content-lg {
+    background-color: #FFEAA0;
+    border: 1px solid var(--main);
+    width: 100%;
+    padding: 6px 24px;
+    box-sizing: border-box;
+    border-radius: 24px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.alert-content-lg .alert-content-main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.alert-content-lg .alert-content-main img {
+    width: 30px;
+    height: auto;
+    object-fit: contain;
+}
+.alert-content-lg a {
+    background-color: var(--main);
+    border-radius: 6px;
+    padding: 6px 36px;
+    text-wrap: nowrap;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.user-profile-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    color: black;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ddd;
+}
+.user-profile-top img {
+    width: 40px;
+    height: auto;
+    object-fit: contain;
+}
+.user-profile-top h3 {
+    margin: 0;
+}
+.user-profile-top p {
+    margin: 0;
+    opacity: 0.5;
+}
+
+.table-of-user-info,
+.table-of-return-product,
+.table-of-last-orders,
+.table-of-payment {
+    width: 100%;
+    box-sizing: border-box;
+}
+.table-of-user-info tr th {
+    font-size: 16px;
+    text-align: right;
+    padding: 12px;
+    opacity: 0.5;
+}
+.table-of-user-info tr td {
+    font-size: 14px;
+    text-align: right;
+    padding: 12px;
+}
+
+.table-of-last-orders tr th,
+.table-of-return-product tr th,
+.table-of-payment tr th {
+    opacity: 0.5;
+    text-align: right;
+    padding: 12px;
+    font-weight: 400;
+}
+.table-of-last-orders tr td,
+.table-of-return-product tr td,
+.table-of-payment tr td {
+    padding: 3px 12px;
+}
+
+.table-of-last-orders .pi-item-order {
+    cursor: pointer;
+}
+.table-of-last-orders .pi-item-order .in-progress {
+    background-color: #D2FFD9;
+    padding: 6px 12px;
+    border-radius: 24px;
+    color: black;
+    width: max-content;
+}
+
+.table-of-last-orders .pi-item-order .completed {
+    background-color: #ffecba;
+    padding: 6px 12px;
+    border-radius: 24px;
+    color: black;
+    width: max-content;
+}
+
+.table-of-last-orders .pi-item-order .canceled {
+    background-color: #ffbfba;
+    padding: 6px 12px;
+    border-radius: 24px;
+    color: black;
+    width: max-content;
+}
+
+.pi-item-order-expand .profile-item-full-info {
+    margin-block: 10px;
+    background: #f6f6f6;
+    padding: 24px;
+    border-radius: 24px;
+}
+.pi-item-order-expand ul li a {
+    color: var(--main);
+    text-decoration: none;
+    line-height: 1.5;
+}
+.pi-item-order-expand .last-price-pifi {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.pi-item-order-expand .last-price-pifi p {
+    margin: 0;
+}
+
+.profile-address {
+    padding: 0;
+    list-style: none;
+}
+.profile-address li div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.profile-address li div a {
+    color: white;
+    background-color: var(--main);
+    text-decoration: none;
+    padding: 6px 24px;
+    line-height: 1;
+    border-radius: 24px;
+    transition: all 0.2s ease;
+}
+.profile-address li div a:hover {
+    opacity: 0.7;
+}
+
+.profile-password-actions,
+.user-info-edit form {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+}
+.profile-password-actions input[type="password"],
+.user-info-edit form input[type="text"],
+.user-info-edit form input[type="email"],
+.user-info-edit form input[type="tel"] {
+    all: unset;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: #f5f5f5;
+    color: black;
+    text-align: right;
+    font-size: 14px;
+}
+.profile-password-actions input[type="submit"],
+.user-info-edit form input[type="submit"] {
+    all: unset;
+    padding: 8px 16px;
+    border-radius: 12px;
+    background-color: var(--main);
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* پاپ‌آپ موبایل */
+.mobile-popup {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 100%;
+    bottom: 0;
+    background: #fff;
+    height: 100%;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    border-radius: 0;
+    overflow-y: auto;
+    transition: top 0.3s ease;
+    z-index: 1000;
+}
+.mobile-popup.active {
+    top: 0;
+}
+
+.popup-header {
+    padding: 14px;
+    background: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.09);
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.close-btn {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.profile-page-top-info  {
+    display: none;
+}
+/* Save items */
+.profile-save-product {
+    list-style: none;
+    padding: 0;
+}
+.profile-save-product li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-radius: 16px;
+    border: 1px solid #ddd;
+    padding: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+.profile-save-product li div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.profile-save-product li div img {
+    width: 90px;
+    height: 90px;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    object-fit: cover;
+}
+.profile-save-product li div a {
+    all: unset;
+    cursor: pointer;
+    background-color: var(--main);
+    padding: 6px 12px;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+.profile-save-product li div a:hover {
+    opacity: 0.7;
+}
+
+@media screen and (max-width: 1024px) {
+    .alert-content-lg a {
+        padding: 6px 12px;
+        text-align: center;
+    }
+
+    .profile-page table {
+        display: block;
+        overflow-x: auto;
+    }
+
+}
+
+@media screen and (max-width: 767px) { 
+    .main-container {
+        padding: 0px !important;
+    }
+    
+    .nestedContainer {
+        flex-direction: column;
+        height: auto;
+    }
+    .sidebar {
+        width: 100%;
+        border-left: none;
+        border-radius: 0;
+    }
+    .menu-item:hover, .menu-item.active {
+        background: transparent;
+    }
+    .menu-item {
+        justify-content: space-between;
+    }
+    .desktopContent {
+        display: none;
+    }
+    
+    .user-profile-top {
+        display: none;
+    }
+    .menu-item .left {
+        display: block;
+    }
+    .is-part {
+        margin-block: 0 16px;
+        padding: 6px 12px;
+    }
+    .profile-dash-info h2 {
+        font-size: 18px;
+    }
+    .profile-dash-info button {
+        background-color: var(--main);
+    }
+    .alert-content-lg {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 18px 22px;
+        width: 90%;
+        margin: 16px auto;
+        gap: 0;
+    }
+
+    .profile-page-top-info {
+        display: block;
+    }
+    .profile-page-top-info .profile-page-logo {
+        background-color: var(--main);
+        width: 100%;
+        height: 140px;
+    }
+    .profile-page-top-info .profile-page-logo img {
+        width: 90px;
+        height: auto;
+        object-fit: contain;
+        margin: 0 auto;
+        padding-top: 16px;
+        display: block;
+    }
+    .profile-page-top-info .user-profile-top {
+        display: flex;
+        border-bottom: none;
+        width: 90%;
+        margin: 0 auto;
+        background-color: white;
+        padding: 16px;
+        border-radius: 24px;
+        margin-top: -50px;
+        box-sizing: border-box;
+    }
+}
+
+/* Ensure piContent_ elements are hidden by default */
+[id^="piContent_"] {
+    display: none;
+}

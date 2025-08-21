@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ShopController;
 use Illuminate\Http\Request;
 
 /*
@@ -43,10 +44,23 @@ Route::middleware(['meta-tags'])->group(function () {
     Route::get('/policy', function () {
         return view('pages/policy');
     })->name('policy');
-    Route::get('/archive', function (Request $request) {
-        $name = $request->query('name');
-        dd($name);
-    })->name('archive');
+    Route::get('/shop', [ ShopController::class , 'index'])->name('shop');
+    Route::get('/shop/{slug}', function (){
+        return view('pages.product');
+    })->name('product');
+    Route::get('/tracking', function () {
+        return view('pages/online-track');
+    })->name('tracking');
+    Route::get('/blog', function () {
+        return view('pages/blog');
+    })->name('blog');
+    Route::get('/blog/{slug}', function () {
+        return view('pages/blog-post-detail');
+    })->name('blog-post-detail');
+    Route::get('/faq', function () {
+        return view('pages/FAQ');
+    })->name('faq');
+    
     
 });
 
@@ -74,3 +88,7 @@ Route::prefix('profile')
         })->name('orders');
 
 });
+
+Route::fallback(function () {
+    return response()->view('errors.404', [], 404);
+})->middleware('web');

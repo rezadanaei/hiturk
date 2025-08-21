@@ -162,6 +162,7 @@
     if (button.classList.contains('active-footer-mobile')) {
       // Deactivate the button
       button.classList.remove('active-footer-mobile');
+      
 
       // Restore last active element if available
       if (toggleActiveFooterMobile.lastActiveElement) {
@@ -172,6 +173,7 @@
       // Hide popup
       if (categoriesPopup) {
         categoriesPopup.classList.remove('open-footer-mobile');
+        document.body.classList.remove('no-scroll');
       }
     } else {
       // Save current active element before deactivating
@@ -186,6 +188,7 @@
       // Show popup
       if (categoriesPopup) {
         categoriesPopup.classList.add('open-footer-mobile');
+        document.body.classList.add('no-scroll');
       }
     }
 

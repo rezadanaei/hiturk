@@ -2,9 +2,11 @@
 
     <!-- Style section (optional)  -->
     <!-- Uncomment and add custom styles if needed -->
-    <!-- @push('styles') 
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}"> 
-    @endpush  -->
+     @push('styles') 
+        <link rel="stylesheet" href="{{ asset('styles/global/fonts.css') }}"> 
+        <link rel="stylesheet" href="{{ asset('styles/global/fonts2.css') }}"> 
+        <link rel="stylesheet" href="{{asset('styles/pages/about.css')}}">
+    @endpush  
 
     <!-- Header section  -->
     @section('header')
@@ -13,7 +15,7 @@
 
     <!-- Main content  -->
     @section('content')
-    <link rel="stylesheet" href="{{asset('styles/pages/about.css')}}">
+    
 
     <div class="main-container">
     

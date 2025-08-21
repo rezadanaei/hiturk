@@ -19,8 +19,14 @@
     {{-- Link to styles --}}
     <link rel="stylesheet" href="@yield('style', asset('css/app.css'))">
     <link rel="stylesheet" href="{{ asset('styles/global/fonts.css') }}"> 
+    <link rel="stylesheet" href="{{ asset('styles/global/fonts2.css') }}"> 
     <link rel="stylesheet" href="{{ asset('styles/global/reset.css') }}"> 
 
+    <style>
+        .no-scroll{
+            overflow: hidden;
+        }
+    </style>
     @stack('styles')
 
     {{-- Additional meta tags and resources --}}

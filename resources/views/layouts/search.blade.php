@@ -78,7 +78,7 @@
         background-color: #eee;
     }
 
-    .mobile-popup {
+    .search-mobile-popup {
         display: none;
         position: fixed;
         inset: 0;
@@ -166,15 +166,15 @@
             margin-top: 20px;
 
         }
-        .mobile-popup .close-mobile-popup{
+        .search-mobile-popup .close-mobile-popup{
             all: unset;
             width: 30px;
             height: 30px;
             position: relative;
             cursor: pointer;
         }
-        .mobile-popup .close-mobile-popup::before,
-        .mobile-popup .close-mobile-popup::after {
+        .search-mobile-popup .close-mobile-popup::before,
+        .search-mobile-popup .close-mobile-popup::after {
             content: "";
             position: absolute;
             top: 50%;
@@ -187,20 +187,21 @@
             border-radius: 1px;
         }
 
-        .mobile-popup .close-mobile-popup::before {
+        .search-mobile-popup .close-mobile-popup::before {
             transform: translate(-50%, -50%) rotate(45deg);
         }
 
-        .mobile-popup .close-mobile-popup::after {
+        .search-mobile-popup .close-mobile-popup::after {
             transform: translate(-50%, -50%) rotate(-45deg);
         }
-        .mobile-popup .close-mobile-popup:hover::before,
-        .mobile-popup .close-mobile-popup:hover::after {
+        .search-mobile-popup .close-mobile-popup:hover::before,
+        .search-mobile-popup .close-mobile-popup:hover::after {
             background-color: black;
         }
 
     }
 </style>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
 <div class="search-box" id="searchTrigger">
     <picture>
@@ -211,7 +212,7 @@
     <div id="desktopResultsPopup" class="results-popup"></div>
 </div>
 
-<div id="mobileSearchPopup" class="mobile-popup">
+<div id="mobileSearchPopup" class="search-mobile-popup">
     <div class="popup-inner">
         <div class="searcher-box">
             <input type="text" id="mobileSearchInput" placeholder="جستجو در های‌ترک">
@@ -233,6 +234,7 @@
         if (mobileResults) {
             mobileResults.innerHTML = '';
             mobileResults.style.display = 'none';
+            document.body.classList.remove('no-scroll');
         }
     }
     document.addEventListener("DOMContentLoaded", function () {
@@ -251,6 +253,7 @@
                 if (isMobile()) {
                     mobilePopup.style.display = 'block';
                     mobileInput.focus();
+                    document.body.classList.add('no-scroll');
                 }
             });
         }
@@ -300,7 +303,7 @@
                             div.classList.add('search-result-item');
 
                             const link = document.createElement('a');
-                            link.href = `/archive?name=${encodeURIComponent(item.name)}`;
+                            link.href = `/shop?name=${encodeURIComponent(item.name)}`;
                             link.textContent = item.name;
                             link.style.flex = '1';
                             link.style.textDecoration = 'none';
@@ -332,7 +335,7 @@
 
             inputElement.addEventListener('keydown', function (e) {
                 if (e.key === 'Enter' && this.value.trim()) {
-                    window.location.href = `/archive?name=${encodeURIComponent(this.value.trim())}`;
+                    window.location.href = `/shop?name=${encodeURIComponent(this.value.trim())}`;
                 }
             });
         }

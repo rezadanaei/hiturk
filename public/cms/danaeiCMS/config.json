@@ -1,0 +1,13 @@
+{
+  "name": "DanaeiCMS",
+  "version": "1.0.0",
+  "license": "",
+  "product_url": "https://danaei.co/products/danaeicms",
+  "website": "https://danaei.co",
+  "author": "شرکت دانایی",
+  "description": "یک سیستم مدیریت محتوای مدرن و ماژولار بدون وابستگی به بک‌اند، با پشتیبانی از پوسته و افزونه.",
+  "keywords": ["CMS", "مدیریت محتوا", "پوسته", "افزونه", "ماژولار"],
+  "repository": "",
+  "support_email": "",
+  "release_date": "2025-08-09"
+}

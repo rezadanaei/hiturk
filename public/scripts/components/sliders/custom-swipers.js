@@ -204,4 +204,23 @@ document.addEventListener("DOMContentLoaded", function () {
             el: el.querySelector(".swiper-pagination"),
         },
     }));
+    
+    // Blog Recommend Swiper
+    initSwiper(".blogRecommendSwiper", (el) => ({
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+            el: el.querySelector(".swiper-pagination"),
+            clickable: true,
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 3,
+            },
+            767: {
+                slidesPerView: 2,
+            },
+        },
+    }));
 });
+
